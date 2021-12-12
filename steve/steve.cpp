@@ -8,7 +8,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include <shader_m.h>
+#include <learnopengl/shader_m.h>
 
 #include <iostream>
 
@@ -85,61 +85,170 @@ int main()
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
+
+
     float vertices[] = {
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-         0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        // KEPALA
+        // 
+        // depan
+        -0.16f, 0.48f, -0.16f,  0.0f, 0.0f, // BL
+         0.16f, 0.48f, -0.16f,  1.0f, 0.0f, // BR
+         0.16f,  0.8f, -0.16f,  1.0f, 1.0f, // TR
+         0.16f,  0.8f, -0.16f,  1.0f, 1.0f, // TR
+        -0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TL
+        -0.16f, 0.48f, -0.16f,  0.0f, 0.0f, // BL
 
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        // belakang
+        -0.16f, 0.48f, 0.16f,  0.0f, 0.0f, // BL
+         0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BR
+         0.16f,  0.8f, 0.16f,  1.0f, 1.0f, // TR
+         0.16f,  0.8f, 0.16f,  1.0f, 1.0f, // TR
+        -0.16f,  0.8f, 0.16f,  0.0f, 1.0f, // TL
+        -0.16f, 0.48f, 0.16f,  0.0f, 0.0f, // BL
 
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        // kiri
+        -0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
+        -0.16f, 0.48f, -0.16f,  1.0f, 1.0f, // BR
+        -0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
+        -0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
+        -0.16f,  0.8f, 0.16f,  0.0f, 0.0f, // TL
+        -0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
 
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        // kanan
+         0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
+         0.16f, 0.48f, -0.16f,  1.0f, 1.0f, // BR
+         0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
+         0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
+         0.16f,  0.8f, 0.16f,  0.0f, 0.0f, // TL
+         0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
 
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+        // bawah
+        -0.16f, 0.48f, 0.16f,  0.0f, 1.0f, // BL
+         0.16f, 0.48f, 0.16f,  1.0f, 1.0f, // BR
+         0.16f, 0.48f, -0.16f,  1.0f, 0.0f, // TR
+         0.16f, 0.48f, -0.16f,  1.0f, 0.0f, // TR
+        -0.16f, 0.48f, -0.16f,  0.0f, 0.0f, // TL
+        -0.16f, 0.48f, 0.16f,  0.0f, 1.0f, // BL
+
+        // atas
+        -0.16f,  0.8f, 0.16f,  0.0f, 1.0f, // BL
+        -0.16f,  0.8f, 0.16f,  1.0f, 1.0f, // BR
+         0.16f,  0.8f, -0.16f,  1.0f, 0.0f, // TR
+         0.16f,  0.8f, -0.16f,  1.0f, 0.0f, // TR
+        -0.16f,  0.8f, -0.16f,  0.0f, 0.0f, // TL
+        -0.16f,  0.8f, 0.16f,  0.0f, 1.0f, // BL
+
+        // BADAN
+        
+        // depan
+        -0.16f,  0.0f,  -0.08f,  0.0f, 0.0f, // BL
+         0.16f,  0.0f,  -0.08f,  1.0f, 0.0f, // BR
+         0.16f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
+         0.16f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
+        -0.16f, 0.48f,  -0.08f,  0.0f, 1.0f, // TL
+        -0.16f,  0.0f,  -0.08f,  0.0f, 0.0f, // BL
+
+        // belakang
+        -0.16f, 0.0f,  0.08f,  0.0f, 0.0f, // BL
+         0.16f, 0.0f,  0.08f,  1.0f, 0.0f, // BR
+         0.16f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
+         0.16f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
+        -0.16f,  0.48f,  0.08f,  0.0f, 1.0f, // TL
+        -0.16f, 0.0f,  0.08f,  0.0f, 0.0f, // BL
+        
+        // kiri
+        -0.16f, 0.0f,  0.08f,  1.0f, 0.0f, // BL
+        -0.16f, 0.0f, -0.08f,  1.0f, 1.0f, // BR
+        -0.16f, 0.48f,  -0.08f,  0.0f, 1.0f, // TR
+        -0.16f, 0.48f,  -0.08f,  0.0f, 1.0f, // TR
+        -0.16f,  0.48f,  0.08f,  0.0f, 0.0f, // TL
+        -0.16f, 0.0f,  0.08f,  1.0f, 0.0f, // BL
+
+        // kanan
+         0.16f, 0.0f, 0.08f,  1.0f, 0.0f, // BL
+         0.16f, 0.0f,  -0.08f,  1.0f, 1.0f, // BR
+         0.16f, 0.48f, -0.08f,  0.0f, 1.0f, // TR
+         0.16f, 0.48f, -0.08f,  0.0f, 1.0f, // TR
+         0.16f,  0.48f,  0.08f,  0.0f, 0.0f, // TL
+         0.16f, 0.0f, 0.08f,  1.0f, 0.0f, // BL
+
+        // bawah
+        -0.16f, 0.0f, 0.08f,  0.0f, 1.0f, // BL
+         0.16f, 0.0f, 0.08f,  1.0f, 1.0f, // BR
+         0.16f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
+         0.16f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
+        -0.16f, 0.0f, -0.08f,  0.0f, 0.0f, // TL
+        -0.16f, 0.0f,  0.08f,  0.0f, 1.0f, // BL
+
+        // atas
+        -0.16f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
+         0.16f, 0.48f, 0.08f,  1.0f, 1.0f, // BR
+         0.16f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
+         0.16f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
+        -0.16f, 0.48f,  -0.08f,  0.0f, 0.0f, // TL
+        -0.16f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
+
+        // KAKI KIRI
+
+        // depan
+        -0.16f, -0.48f, -0.08f,  0.0f, 0.0f, // bottom left
+         0.0f, -0.48f, -0.08f,  1.0f, 0.0f, // bottom r
+         0.0f,  0.0f, -0.08f,  1.0f, 1.0f, // top r
+         0.0f,  0.0f, -0.08f,  1.0f, 1.0f, // top r
+        -0.16f,  0.0f, -0.08f,  0.0f, 1.0f, // top l
+        -0.16f, -0.48f, -0.08f,  0.0f, 0.0f, // bottom left
+
+        // belakang
+        -0.16f, -0.48f,  0.08f,  0.0f, 0.0f, // bottom left
+         0.0f, -0.48f,  0.08f,  1.0f, 0.0f, // bottom right
+         0.0f,  0.0f,  0.08f,  1.0f, 1.0f, // top right
+         0.0f,  0.0f,  0.08f,  1.0f, 1.0f, // top right
+        -0.16f,  0.0f,  0.08f,  0.0f, 1.0f, // top left
+        -0.16f, -0.48f,  0.08f,  0.0f, 0.0f, // bottom left
+        
+        // kiri
+        -0.16f,  -0.48f,  -0.08f,  1.0f, 0.0f, // BL
+        -0.16f,  -0.48f, 0.08f,  1.0f, 1.0f, // BR
+        -0.16f, 0.0f, 0.08f,  0.0f, 1.0f, // TR
+        -0.16f, 0.0f, 0.08f,  0.0f, 1.0f, // TR
+        -0.16f, 0.0f,  -0.08f,  0.0f, 0.0f, // TL
+        -0.16f,  -0.48f,  -0.08f,  1.0f, 0.0f, // BL
+        // kanan
+         0.0f,  -0.48f,  0.08f,  1.0f, 0.0f, // BL
+         0.0f,  -0.48f, -0.08f,  1.0f, 1.0f, // BR
+         0.0f, 0.0f, -0.08f,  0.0f, 1.0f, // TR
+         0.0f, 0.0f, -0.08f,  0.0f, 1.0f, // TR
+         0.0f, 0.0f,  0.08f,  0.0f, 0.0f, // TL
+         0.0f,  -0.48f,  0.08f,  1.0f, 0.0f, // BL
+        // bawah
+        -0.16f, -0.48f, -0.08f,  0.0f, 1.0f, // BL
+         0.0f, -0.48f, -0.08f,  1.0f, 1.0f, // BR
+         0.0f, -0.48f,  0.08f,  1.0f, 0.0f, // TR
+         0.0f, -0.48f,  0.08f,  1.0f, 0.0f, // TR
+        -0.16f, -0.48f,  0.08f,  0.0f, 0.0f, // TL
+        -0.16f, -0.48f, -0.08f,  0.0f, 1.0f, // BL
+        // atas
+        -0.16f, 0.0f, -0.08f,  0.0f, 1.0f, // BL
+         0.0f, 0.0f, -0.08f,  1.0f, 1.0f, // BR
+         0.0f, 0.0f,  0.08f,  1.0f, 0.0f, // TR
+         0.0f, 0.0f,  0.08f,  1.0f, 0.0f, // TR
+        -0.16f, 0.0f,  0.08f,  0.0f, 0.0f, // TL
+        -0.16f, 0.0f, -0.08f,  0.0f, 1.0f, // BL
+ 
+        // LANTAI
+
+        -1.0f, -0.48f, 1.0f,  0.0f, 1.0f, // BL
+         1.0f, -0.48f, 1.0f,  1.0f, 1.0f, // BR
+         1.0f, -0.48f, -1.0f,  1.0f, 0.0f, // TR
+         1.0f, -0.48f, -1.0f, 1.0f, 0.0f, // TR
+        -1.0f, -0.48f, -1.0f,  0.0f, 0.0f, // TL
+        -1.0f, -0.48f, 1.0f, 0.0f, 1.0f, // BL
     };
+
     // world space positions of our cubes
     glm::vec3 cubePositions[] = {
-        glm::vec3(0.0f,  0.0f,  0.0f),
-        glm::vec3(2.0f,  5.0f, -15.0f),
-        glm::vec3(-1.5f, -2.2f, -2.5f),
-        glm::vec3(-3.8f, -2.0f, -12.3f),
-        glm::vec3(2.4f, -0.4f, -3.5f),
-        glm::vec3(-1.7f,  3.0f, -7.5f),
-        glm::vec3(1.3f, -2.0f, -2.5f),
-        glm::vec3(1.5f,  2.0f, -2.5f),
-        glm::vec3(1.5f,  0.2f, -1.5f),
-        glm::vec3(-1.3f,  1.0f, -1.5f)
+        glm::vec3(0.0f,  0.0f,  0.0f)
     };
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
@@ -254,7 +363,7 @@ int main()
 
         // render boxes
         glBindVertexArray(VAO);
-        for (unsigned int i = 0; i < 10; i++)
+        for (unsigned int i = 0; i < 1; i++)
         {
             // calculate the model matrix for each object and pass it to shader before drawing
             glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
@@ -263,7 +372,7 @@ int main()
             model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
             ourShader.setMat4("model", model);
 
-            glDrawArrays(GL_TRIANGLES, 0, 36);
+            glDrawArrays(GL_TRIANGLES, 0, 114);
         }
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
