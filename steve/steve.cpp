@@ -86,314 +86,306 @@ int main()
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
 
+    // -------------------------- OBJEK 1 ----------------------------------
 
     float vertices[] = {
 
         // KEPALA
         // 
         // depan
-        -0.16f, 0.48f, -0.16f,  0.0f, 0.0f, // BL
-         0.16f, 0.48f, -0.16f,  1.0f, 0.0f, // BR
-         0.16f,  0.8f, -0.16f,  1.0f, 1.0f, // TR
-         0.16f,  0.8f, -0.16f,  1.0f, 1.0f, // TR
-        -0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TL
-        -0.16f, 0.48f, -0.16f,  0.0f, 0.0f, // BL
+        -0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BL
+         0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BR
+         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TL
+        -0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BL
 
         // belakang
-        -0.16f, 0.48f, 0.16f,  0.0f, 0.0f, // BL
-         0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BR
-         0.16f,  0.8f, 0.16f,  1.0f, 1.0f, // TR
-         0.16f,  0.8f, 0.16f,  1.0f, 1.0f, // TR
-        -0.16f,  0.8f, 0.16f,  0.0f, 1.0f, // TL
-        -0.16f, 0.48f, 0.16f,  0.0f, 0.0f, // BL
+        -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
+         0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BR
+         0.16f,  0.8f, 0.16f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f,  0.8f, 0.16f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f,  0.8f, 0.16f,   0.662f, 0.490f, 0.392f, // TL
+        -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
 
         // kiri
-        -0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
-        -0.16f, 0.48f, -0.16f,  1.0f, 1.0f, // BR
-        -0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
-        -0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
-        -0.16f,  0.8f, 0.16f,  0.0f, 0.0f, // TL
-        -0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
+        -0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
+        -0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BR
+        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+        -0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // TL
+        -0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
 
         // kanan
-         0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
-         0.16f, 0.48f, -0.16f,  1.0f, 1.0f, // BR
-         0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
-         0.16f,  0.8f, -0.16f,  0.0f, 1.0f, // TR
-         0.16f,  0.8f, 0.16f,  0.0f, 0.0f, // TL
-         0.16f, 0.48f, 0.16f,  1.0f, 0.0f, // BL
+         0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
+         0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BR
+         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+         0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // TL
+         0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
 
         // bawah
-        -0.16f, 0.48f, 0.16f,  0.0f, 1.0f, // BL
-         0.16f, 0.48f, 0.16f,  1.0f, 1.0f, // BR
-         0.16f, 0.48f, -0.16f,  1.0f, 0.0f, // TR
-         0.16f, 0.48f, -0.16f,  1.0f, 0.0f, // TR
-        -0.16f, 0.48f, -0.16f,  0.0f, 0.0f, // TL
-        -0.16f, 0.48f, 0.16f,  0.0f, 1.0f, // BL
+        -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
+         0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BR
+         0.16f, 0.48f, -0.16f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f, 0.48f, -0.16f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f, 0.48f, -0.16f,   0.662f, 0.490f, 0.392f, // TL
+        -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
 
         // atas
-        -0.16f,  0.8f, 0.16f,  0.0f, 1.0f, // BL
-         0.16f,  0.8f, 0.16f,  1.0f, 1.0f, // BR
-         0.16f,  0.8f, -0.16f,  1.0f, 0.0f, // TR
-         0.16f,  0.8f, -0.16f,  1.0f, 0.0f, // TR
-        -0.16f,  0.8f, -0.16f,  0.0f, 0.0f, // TL
-        -0.16f,  0.8f, 0.16f,  0.0f, 1.0f, // BL
+        -0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
+         0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // BR
+         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
+        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TL
+        -0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
 
         // BADAN
-        
+
         // depan
-        -0.16f,  0.0f,  -0.08f,  0.0f, 0.0f, // BL
-         0.16f,  0.0f,  -0.08f,  1.0f, 0.0f, // BR
-         0.16f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
-         0.16f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
-        -0.16f, 0.48f,  -0.08f,  0.0f, 1.0f, // TL
-        -0.16f,  0.0f,  -0.08f,  0.0f, 0.0f, // BL
+        -0.16f,  0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // BL
+         0.16f,  0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // BR
+         0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+         0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+        -0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TL
+        -0.16f,  0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // BL
 
         // belakang
-        -0.16f, 0.0f,  0.08f,  0.0f, 0.0f, // BL
-         0.16f, 0.0f,  0.08f,  1.0f, 0.0f, // BR
-         0.16f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
-         0.16f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
-        -0.16f,  0.48f,  0.08f,  0.0f, 1.0f, // TL
-        -0.16f, 0.0f,  0.08f,  0.0f, 0.0f, // BL
-        
+        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BR
+         0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TR
+         0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TR
+        -0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TL
+        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
+
         // kiri
-        -0.16f, 0.0f,  0.08f,  1.0f, 0.0f, // BL
-        -0.16f, 0.0f, -0.08f,  1.0f, 1.0f, // BR
-        -0.16f, 0.48f,  -0.08f,  0.0f, 1.0f, // TR
-        -0.16f, 0.48f,  -0.08f,  0.0f, 1.0f, // TR
-        -0.16f,  0.48f,  0.08f,  0.0f, 0.0f, // TL
-        -0.16f, 0.0f,  0.08f,  1.0f, 0.0f, // BL
+        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
+        -0.16f, 0.0f, -0.08f,   0.054f, 0.682f, 0.682f, // BR
+        -0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+        -0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+        -0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TL
+        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
 
         // kanan
-         0.16f, 0.0f, 0.08f,  1.0f, 0.0f, // BL
-         0.16f, 0.0f,  -0.08f,  1.0f, 1.0f, // BR
-         0.16f, 0.48f, -0.08f,  0.0f, 1.0f, // TR
-         0.16f, 0.48f, -0.08f,  0.0f, 1.0f, // TR
-         0.16f,  0.48f,  0.08f,  0.0f, 0.0f, // TL
-         0.16f, 0.0f, 0.08f,  1.0f, 0.0f, // BL
+         0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // BR
+         0.16f, 0.48f, -0.08f,   0.054f, 0.682f, 0.682f, // TR
+         0.16f, 0.48f, -0.08f,   0.054f, 0.682f, 0.682f, // TR
+         0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TL
+         0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
 
         // bawah
-        -0.16f, 0.0f, 0.08f,  0.0f, 1.0f, // BL
-         0.16f, 0.0f, 0.08f,  1.0f, 1.0f, // BR
-         0.16f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
-         0.16f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
-        -0.16f, 0.0f, -0.08f,  0.0f, 0.0f, // TL
-        -0.16f, 0.0f,  0.08f,  0.0f, 1.0f, // BL
+        -0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BR
+         0.16f, 0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+         0.16f, 0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+        -0.16f, 0.0f, -0.08f,   0.054f, 0.682f, 0.682f, // TL
+        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
 
         // atas
-        -0.16f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
-         0.16f, 0.48f, 0.08f,  1.0f, 1.0f, // BR
-         0.16f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
-         0.16f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
-        -0.16f, 0.48f,  -0.08f,  0.0f, 0.0f, // TL
-        -0.16f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
+        -0.16f, 0.48f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.48f, 0.08f,   0.054f, 0.682f, 0.682f, // BR
+         0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+         0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
+        -0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TL
+        -0.16f, 0.48f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
 
         // TANGAN KANAN
-        
+
         // depan V
-         0.16f, 0.0f, -0.08f,  0.0f, 0.0f, // BL
-         0.32f,  0.0f,  -0.08f,  1.0f, 0.0f, // BR
-         0.32f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
-         0.32f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
-         0.16f, 0.48f, -0.08f,  0.0f, 1.0f, // TL
-         0.16f, 0.0f, -0.08f,  0.0f, 0.0f, // BL
+         0.16f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // BL
+         0.32f,  0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // BR
+         0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f, 0.48f, -0.08f,   0.662f, 0.490f, 0.392f, // TL
+         0.16f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // belakang V
-         0.16f, 0.0f, 0.08f,  0.0f, 0.0f, // BL
-         0.32f, 0.0f,  0.08f,  1.0f, 0.0f, // BR
-         0.32f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
-         0.32f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
-         0.16f, 0.48f, 0.08f,  0.0f, 1.0f, // TL
-         0.16f, 0.0f, 0.08f,  0.0f, 0.0f, // BL
-        
+         0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+         0.32f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BR
+         0.32f,  0.48f,  0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.32f,  0.48f,  0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // TL
+         0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+
         // kiri V
-         0.16f, 0.0f, 0.08f, 1.0f, 0.0f, // BL
-         0.16f, 0.0f, -0.08f, 1.0f, 1.0f, // BR
-         0.16f, 0.48f, -0.08f, 0.0f, 1.0f, // TR
-         0.16f, 0.48f, -0.08f, 0.0f, 1.0f, // TR
-         0.16f, 0.48f, 0.08f, 0.0f, 0.0f, // TL
-         0.16f, 0.0f, 0.08f, 1.0f, 0.0f, // BL
+         0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+         0.16f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // BR
+         0.16f, 0.48f, -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f, 0.48f, -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // TL
+         0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // kanan V
-         0.32f, 0.0f, 0.08f,  1.0f, 0.0f, // BL
-         0.32f, 0.0f,  -0.08f,  1.0f, 1.0f, // BR
-         0.32f, 0.48f, -0.08f,  0.0f, 1.0f, // TR
-         0.32f, 0.48f, -0.08f,  0.0f, 1.0f, // TR
-         0.32f, 0.48f,  0.08f,  0.0f, 0.0f, // TL
-         0.32f, 0.0f, 0.08f,  1.0f, 0.0f, // BL
+         0.32f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+         0.32f, 0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // BR
+         0.32f, 0.48f, -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.32f, 0.48f, -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.32f, 0.48f,  0.08f,   0.662f, 0.490f, 0.392f, // TL
+         0.32f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // bawah
-         0.16f, 0.0f, 0.08f,  0.0f, 1.0f, // BL
-         0.32f, 0.0f, 0.08f,  1.0f, 1.0f, // BR
-         0.32f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
-         0.32f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
-         0.16f, 0.0f, -0.08f,  0.0f, 0.0f, // TL
-         0.16f, 0.0f,  0.08f,  0.0f, 1.0f, // BL
+         0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+         0.32f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BR
+         0.32f, 0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.32f, 0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // TL
+         0.16f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // atas
-         0.16f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
-         0.32f, 0.48f, 0.08f,  1.0f, 1.0f, // BR
-         0.32f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
-         0.32f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
-         0.16f, 0.48f,  -0.08f,  0.0f, 0.0f, // TL
-         0.16f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
+         0.16f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+         0.32f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // BR
+         0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+         0.16f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TL
+         0.16f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // TANGAN KIRI
-        
+
         // depan
-        -0.32f,  0.0f,  -0.08f,  0.0f, 0.0f, // BL
-        -0.16f, 0.0f, -0.08f,  1.0f, 0.0f, // BR
-        -0.16f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
-        -0.16f, 0.48f,  -0.08f,  1.0f, 1.0f, // TR
-        -0.32f, 0.48f,  -0.08f,  0.0f, 1.0f, // TL
-        -0.32f,  0.0f,  -0.08f,  0.0f, 0.0f, // BL
+        -0.32f,  0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // BL
+        -0.16f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // BR
+        -0.16f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TL
+        -0.32f,  0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // belakang
-        -0.32f, 0.0f,  0.08f,  0.0f, 0.0f, // BL
-        -0.16f, 0.0f,  0.08f,  1.0f, 0.0f, // BR
-        -0.16f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
-        -0.16f,  0.48f,  0.08f,  1.0f, 1.0f, // TR
-        -0.32f,  0.48f,  0.08f,  0.0f, 1.0f, // TL
-        -0.32f, 0.0f,  0.08f,  0.0f, 0.0f, // BL
-        
+        -0.32f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BL
+        -0.16f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BR
+        -0.16f,  0.48f,  0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f,  0.48f,  0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.32f,  0.48f,  0.08f,   0.662f, 0.490f, 0.392f, // TL
+        -0.32f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BL
+
         // kiri
-        -0.32f, 0.0f,  0.08f,  1.0f, 0.0f, // BL
-        -0.32f, 0.0f, -0.08f,  1.0f, 1.0f, // BR
-        -0.32f, 0.48f,  -0.08f,  0.0f, 1.0f, // TR
-        -0.32f, 0.48f,  -0.08f,  0.0f, 1.0f, // TR
-        -0.32f,  0.48f,  0.08f,  0.0f, 0.0f, // TL
-        -0.32f, 0.0f,  0.08f,  1.0f, 0.0f, // BL
+        -0.32f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BL
+        -0.32f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // BR
+        -0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.32f,  0.48f,  0.08f,   0.662f, 0.490f, 0.392f, // TL
+        -0.32f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // kanan
-        -0.16f, 0.0f, 0.08f, 1.0f, 0.0f, // BL
-        -0.16f, 0.0f, -0.08f, 1.0f, 1.0f, // BR
-        -0.16f, 0.48f, -0.08f, 0.0f, 1.0f, // TR
-        -0.16f, 0.48f, -0.08f, 0.0f, 1.0f, // TR
-        -0.16f, 0.48f, 0.08f, 0.0f, 0.0f, // TL
-        -0.16f, 0.0f, 0.08f, 1.0f, 0.0f, // BL
+        -0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+        -0.16f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // BR
+        -0.16f, 0.48f, -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f, 0.48f, -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // TL
+        -0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // bawah
-        -0.32f, 0.0f, 0.08f,  0.0f, 1.0f, // BL
-        -0.16f, 0.0f, 0.08f,  1.0f, 1.0f, // BR
-        -0.16f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
-        -0.16f, 0.0f,  -0.08f,  1.0f, 0.0f, // TR
-        -0.32f, 0.0f, -0.08f,  0.0f, 0.0f, // TL
-        -0.32f, 0.0f,  0.08f,  0.0f, 1.0f, // BL
+        -0.32f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+        -0.16f, 0.0f, 0.08f,   0.662f, 0.490f, 0.392f, // BR
+        -0.16f, 0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f, 0.0f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.32f, 0.0f, -0.08f,   0.662f, 0.490f, 0.392f, // TL
+        -0.32f, 0.0f,  0.08f,   0.662f, 0.490f, 0.392f, // BL
 
         // atas
-        -0.32f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
-        -0.16f, 0.48f, 0.08f,  1.0f, 1.0f, // BR
-        -0.16f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
-        -0.16f, 0.48f,  -0.08f,  1.0f, 0.0f, // TR
-        -0.32f, 0.48f,  -0.08f,  0.0f, 0.0f, // TL
-        -0.32f, 0.48f, 0.08f,  0.0f, 1.0f, // BL
-        
+        -0.32f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+        -0.16f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // BR
+        -0.16f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.16f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TR
+        -0.32f, 0.48f,  -0.08f,   0.662f, 0.490f, 0.392f, // TL
+        -0.32f, 0.48f, 0.08f,   0.662f, 0.490f, 0.392f, // BL
+
         // KAKI KIRI
 
         // depan
-        -0.16f, -0.48f, -0.08f,  0.0f, 0.0f, // BL
-         0.0f, -0.48f, -0.08f,  1.0f, 0.0f, // BR
-         0.0f,  0.0f, -0.08f,  1.0f, 1.0f, // TR
-         0.0f,  0.0f, -0.08f,  1.0f, 1.0f, // TR
-        -0.16f,  0.0f, -0.08f,  0.0f, 1.0f, // TL
-        -0.16f, -0.48f, -0.08f,  0.0f, 0.0f, // BL
+        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
 
         // belakang
-        -0.16f, -0.48f,  0.08f,  0.0f, 0.0f, // BL
-         0.0f, -0.48f,  0.08f,  1.0f, 0.0f, // BR
-         0.0f,  0.0f,  0.08f,  1.0f, 1.0f, // TR
-         0.0f,  0.0f,  0.08f,  1.0f, 1.0f, // TR
-        -0.16f,  0.0f,  0.08f,  0.0f, 1.0f, // TL
-        -0.16f, -0.48f,  0.08f,  0.0f, 0.0f, // BL
-        
+        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+
         // kiri
-        -0.16f,  -0.48f,  -0.08f,  1.0f, 0.0f, // BL
-        -0.16f,  -0.48f, 0.08f,  1.0f, 1.0f, // BR
-        -0.16f, 0.0f, 0.08f,  0.0f, 1.0f, // TR
-        -0.16f, 0.0f, 0.08f,  0.0f, 1.0f, // TR
-        -0.16f, 0.0f,  -0.08f,  0.0f, 0.0f, // TL
-        -0.16f,  -0.48f,  -0.08f,  1.0f, 0.0f, // BL
+        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BR
+        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
         // kanan
-         0.0f,  -0.48f,  0.08f,  1.0f, 0.0f, // BL
-         0.0f,  -0.48f, -0.08f,  1.0f, 1.0f, // BR
-         0.0f, 0.0f, -0.08f,  0.0f, 1.0f, // TR
-         0.0f, 0.0f, -0.08f,  0.0f, 1.0f, // TR
-         0.0f, 0.0f,  0.08f,  0.0f, 0.0f, // TL
-         0.0f,  -0.48f,  0.08f,  1.0f, 0.0f, // BL
-        // bawah
-        -0.16f, -0.48f, -0.08f,  0.0f, 1.0f, // BL
-         0.0f, -0.48f, -0.08f,  1.0f, 1.0f, // BR
-         0.0f, -0.48f,  0.08f,  1.0f, 0.0f, // TR
-         0.0f, -0.48f,  0.08f,  1.0f, 0.0f, // TR
-        -0.16f, -0.48f,  0.08f,  0.0f, 0.0f, // TL
-        -0.16f, -0.48f, -0.08f,  0.0f, 1.0f, // BL
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+    // bawah
+        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
         // atas
-        -0.16f, 0.0f, -0.08f,  0.0f, 1.0f, // BL
-         0.0f, 0.0f, -0.08f,  1.0f, 1.0f, // BR
-         0.0f, 0.0f,  0.08f,  1.0f, 0.0f, // TR
-         0.0f, 0.0f,  0.08f,  1.0f, 0.0f, // TR
-        -0.16f, 0.0f,  0.08f,  0.0f, 0.0f, // TL
-        -0.16f, 0.0f, -0.08f,  0.0f, 1.0f, // BL
+        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
 
         // KAKI KANAN
 
         // depan
-        0.0f, -0.48f, -0.08f, 0.0f, 0.0f, // BL
-        0.16f, -0.48f, -0.08f, 1.0f, 0.0f, // BR
-        0.16f, 0.0f, -0.08f, 1.0f, 1.0f, // TR
-        0.16f, 0.0f, -0.08f, 1.0f, 1.0f, // TR
-        0.0f, 0.0f, -0.08f, 0.0f, 1.0f, // TL
-        0.0f, -0.48f, -0.08f, 0.0f, 0.0f, // BL
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TL
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
 
         // belakang
-        0.0f, -0.48f, 0.08f, 0.0f, 0.0f, // BL
-        0.16f, -0.48f, 0.08f, 1.0f, 0.0f, // BR
-        0.16f, 0.0f, 0.08f, 1.0f, 1.0f, // TR
-        0.16f, 0.0f, 0.08f, 1.0f, 1.0f, // TR
-        0.0f, 0.0f, 0.08f, 0.0f, 1.0f, // TL
-        0.0f, -0.48f, 0.08f, 0.0f, 0.0f, // BL
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
 
         // kiri
-        0.0f, -0.48f, 0.08f, 1.0f, 0.0f, // BL
-        0.0f, -0.48f, -0.08f, 1.0f, 1.0f, // BR
-        0.0f, 0.0f, -0.08f, 0.0f, 1.0f, // TR
-        0.0f, 0.0f, -0.08f, 0.0f, 1.0f, // TR
-        0.0f, 0.0f, 0.08f, 0.0f, 0.0f, // TL
-        0.0f, -0.48f, 0.08f, 1.0f, 0.0f, // BL
-        
-        // kanan
-        0.16f, -0.48f, 0.08f, 1.0f, 0.0f, // BL
-        0.16f, -0.48f, -0.08f, 1.0f, 1.0f, // BR
-        0.16f, 0.0f, -0.08f, 0.0f, 1.0f, // TR
-        0.16f, 0.0f, -0.08f, 0.0f, 1.0f, // TR
-        0.16f, 0.0f, 0.08f, 0.0f, 0.0f, // TL
-        0.16f, -0.48f, 0.08f, 1.0f, 0.0f, // BL
-        
-        // bawah
-        0.0f, -0.48f, -0.08f, 0.0f, 1.0f, // BL
-        0.16f, -0.48f, -0.08f, 1.0f, 1.0f, // BR
-        0.16f, -0.48f, 0.08f, 1.0f, 0.0f, // TR
-        0.16f, -0.48f, 0.08f, 1.0f, 0.0f, // TR
-        0.0f, -0.48f, 0.08f, 0.0f, 0.0f, // TL
-        0.0f, -0.48f, -0.08f, 0.0f, 1.0f, // BL
-        
-        // atas
-        0.0f, 0.0f, -0.08f, 0.0f, 1.0f, // BL
-        0.16f, 0.0f, -0.08f, 1.0f, 1.0f, // BR
-        0.16f, 0.0f, 0.08f, 1.0f, 0.0f, // TR
-        0.16f, 0.0f, 0.08f, 1.0f, 0.0f, // TR
-        0.0f, 0.0f, 0.08f, 0.0f, 0.0f, // TL
-        0.0f, 0.0f, -0.08f, 0.0f, 1.0f, // BL
- 
-        // LANTAI
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
 
-        -1.0f, -0.48f, 1.0f,  0.0f, 1.0f, // BL
-         1.0f, -0.48f, 1.0f,  1.0f, 1.0f, // BR
-         1.0f, -0.48f, -1.0f,  1.0f, 0.0f, // TR
-         1.0f, -0.48f, -1.0f, 1.0f, 0.0f, // TR
-        -1.0f, -0.48f, -1.0f,  0.0f, 0.0f, // TL
-        -1.0f, -0.48f, 1.0f, 0.0f, 1.0f, // BL
+        // kanan
+        0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+
+        // bawah
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+
+        // atas
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
+        0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
+        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f // BL
     };
 
     // world space positions of our cubes
@@ -410,70 +402,45 @@ int main()
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     // texture coord attribute
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
 
-    // load and create a texture 
-    // -------------------------
-    unsigned int texture1, texture2;
-    // texture 1
-    // ---------
-    glGenTextures(1, &texture1);
-    glBindTexture(GL_TEXTURE_2D, texture1);
-    // set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // load image, create texture and generate mipmaps
-    int width, height, nrChannels;
-    stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-    unsigned char* data = stbi_load(("Textures/container.jpg"), &width, &height, &nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
-    // texture 2
-    // ---------
-    glGenTextures(1, &texture2);
-    glBindTexture(GL_TEXTURE_2D, texture2);
-    // set the texture wrapping parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // set texture filtering parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // load image, create texture and generate mipmaps
-    data = stbi_load(("Textures/awesomeface.png"), &width, &height, &nrChannels, 0);
-    if (data)
-    {
-        // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else
-    {
-        std::cout << "Failed to load texture" << std::endl;
-    }
-    stbi_image_free(data);
+    // -------------------------- OBJEK 2 ----------------------------------
 
-    // tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
-    // -------------------------------------------------------------------------------------------
-    ourShader.use();
-    ourShader.setInt("texture1", 0);
-    ourShader.setInt("texture2", 1);
+    float vertices_floor[] = {
+         1.0f, -0.48f, -1.0f,   0.419f, 0.419f, 0.419f,  // top right
+         1.0f, -0.48f, 1.0f,    0.419f, 0.419f, 0.419f,// bottom right
+        -1.0f, -0.48f, 1.0f,    0.419f, 0.419f, 0.419f,// bottom left
+        -1.0f, -0.48f, -1.0f,   0.419f, 0.419f, 0.419f  // top left 
+    };
+    unsigned int indices_floor[] = {  // note that we start from 0!
+        0, 1, 3,  // first Triangle
+        1, 2, 3   // second Triangle
+    };
+    unsigned int VBO_floor, VAO_floor, EBO_floor;
+    glGenVertexArrays(1, &VAO_floor);
+    glGenBuffers(1, &VBO_floor);
+    glGenBuffers(1, &EBO_floor);
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
+    glBindVertexArray(VAO_floor);
 
+    glBindBuffer(GL_ARRAY_BUFFER, VBO_floor);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices_floor), vertices_floor, GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO_floor);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices_floor), indices_floor, GL_STATIC_DRAW);
+    
+    // position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // color coord attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     // render loop
     // -----------
@@ -494,11 +461,11 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // bind textures on corresponding texture units
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture1);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(GL_TEXTURE_2D, texture2);
+        //// bind textures on corresponding texture units
+        //glActiveTexture(GL_TEXTURE0);
+        //glBindTexture(GL_TEXTURE_2D, texture1);
+        //glActiveTexture(GL_TEXTURE1);
+        //glBindTexture(GL_TEXTURE_2D, texture2);
 
         // activate shader
         ourShader.use();
@@ -522,8 +489,13 @@ int main()
             model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
             ourShader.setMat4("model", model);
 
-            glDrawArrays(GL_TRIANGLES, 0, 222);
+            glDrawArrays(GL_TRIANGLES, 0, 216);
         }
+
+        // merender object ke 2
+        glBindVertexArray(VAO_floor);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -535,6 +507,8 @@ int main()
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
+    glDeleteVertexArrays(1, &VAO_floor);
+    glDeleteBuffers(1, &VBO_floor);
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
