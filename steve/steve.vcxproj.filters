@@ -29,5 +29,11 @@
     <None Include="steve.vs">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="face.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="face.vs">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

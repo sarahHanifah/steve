@@ -146,6 +146,8 @@
     <ClCompile Include="steve.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="face.fs" />
+    <None Include="face.vs" />
     <None Include="steve.fs" />
     <None Include="steve.vs" />
   </ItemGroup>
