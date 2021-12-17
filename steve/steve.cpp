@@ -103,35 +103,35 @@ int main()
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
 
-    // -------------------------- OBJEK 1 ----------------------------------
+    // -------------------------- OBJEK 1 (KEPALA DAN BADAN) ----------------------------------
 
     float vertices[] = {
 
         // KEPALA
         // 
         // depan
-        -0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BL
-         0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BR
-         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TL
-        -0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BL
+        -0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BL
+         0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BR
+         0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+         0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+        -0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TL
+        -0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BL
 
         // kiri
-        -0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
-        -0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BR
-        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-        -0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // TL
-        -0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
+        -0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+        -0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BR
+        -0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+        -0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+        -0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // TL
+        -0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
 
         // kanan
-         0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
-         0.16f, 0.48f, -0.16f,   0.192f, 0.188f, 0.168f, // BR
-         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-         0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // TL
-         0.16f, 0.48f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
+         0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+         0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BR
+         0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+         0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+         0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // TL
+         0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
 
         // bawah
         -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
@@ -142,12 +142,12 @@ int main()
         -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
 
         // atas
-        -0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
-         0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // BR
-         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-         0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TR
-        -0.16f,  0.8f, -0.16f,   0.192f, 0.188f, 0.168f, // TL
-        -0.16f,  0.8f, 0.16f,   0.192f, 0.188f, 0.168f, // BL
+        -0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+         0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // BR
+         0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+         0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
+        -0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TL
+        -0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
 
         // BADAN
 
@@ -216,7 +216,7 @@ int main()
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
-    // -------------------------- OBJEK 1.5 ----------------------------------
+    // -------------------------- OBJEK 1.5 (MUKA) ----------------------------------
 
     float vertices_face[] = {
         // depan
@@ -280,7 +280,7 @@ int main()
     stbi_image_free(data);
     
     
-    // -------------------------- OBJEK 2 ----------------------------------
+    // -------------------------- OBJEK 2 (TANGAN) ----------------------------------
 
     float vertices2[] = {
 
@@ -349,7 +349,7 @@ int main()
     glEnableVertexAttribArray(1);
 
 
-    // -------------------------- OBJEK 3 ----------------------------------
+    // -------------------------- OBJEK 3 (KAKI) ----------------------------------
 
     float vertices3[] = {
 
@@ -418,12 +418,12 @@ int main()
     glEnableVertexAttribArray(1);
 
 
-    // -------------------------- OBJEK 4 ----------------------------------
+    // -------------------------- OBJEK 4 (LANTAI) ----------------------------------
 
     float vertices_floor[] = {
          1.5f, -0.48f, -1.5f,   0.419f, 0.419f, 0.419f,  // top right
-         1.5f, -0.48f, 1.5f,    0.419f, 0.419f, 0.419f,// bottom right
-        -1.5f, -0.48f, 1.5f,    0.419f, 0.419f, 0.419f,// bottom left
+         1.5f, -0.48f, 1.5f,    0.419f, 0.419f, 0.419f, // bottom right
+        -1.5f, -0.48f, 1.5f,    0.419f, 0.419f, 0.419f, // bottom left
         -1.5f, -0.48f, -1.5f,   0.419f, 0.419f, 0.419f  // top left 
     };
     unsigned int indices_floor[] = {  // note that we start from 0!
@@ -469,7 +469,6 @@ int main()
         // ------
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 
         // activate shader
         ourShader.use();
@@ -534,7 +533,7 @@ int main()
         glDrawArrays(GL_TRIANGLES, 0, 36);
         // 
         // 
-        // merender object ke 4
+        // merender object lantai
         glBindVertexArray(VAO_floor);
         // calculate the model matrix for each object and pass it to shader before drawing
         glm::mat4 model_floor = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
@@ -557,7 +556,7 @@ int main()
         glm::mat4 view_face = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
         ShaderFace.setMat4("view", view_face);
 
-        // merender object face
+        // merender object face (muka)
         glBindVertexArray(VAO_face);
         // calculate the model matrix for each object and pass it to shader before drawing
         glm::mat4 model_face = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
@@ -610,7 +609,7 @@ void processInput(GLFWwindow* window)
         cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
+    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
         if (posX < 1.34f) {
             posX = posX + steveSpeed;
             posX_lf = posX_lf + steveSpeed;
@@ -619,7 +618,7 @@ void processInput(GLFWwindow* window)
             posX_rh = posX_rh + steveSpeed;
         }
     }
-    if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
+    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
         if (posX > -1.34f) {
             posX = posX - steveSpeed;
             posX_lf = posX_lf - steveSpeed;
