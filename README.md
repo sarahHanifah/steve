@@ -3,6 +3,6 @@
 
 Camera : W A S D
 
-Zoom : Scroolwheel
+Zoom : Scrollwheel
 
 Steve Movement : Arrow Key
