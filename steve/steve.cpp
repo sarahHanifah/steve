@@ -56,7 +56,6 @@ float lastFrame = 0.0f;
 int main()
 {
     // glfw: initialize and configure
-    // ------------------------------
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -67,7 +66,6 @@ int main()
 #endif
 
     // glfw window creation
-    // --------------------
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
@@ -84,7 +82,6 @@ int main()
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     // glad: load all OpenGL function pointers
-    // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
@@ -92,16 +89,13 @@ int main()
     }
 
     // configure global opengl state
-    // -----------------------------
     glEnable(GL_DEPTH_TEST);
 
     // build and compile our shader zprogram
-    // ------------------------------------
-    Shader ourShader("steve.vs", "steve.fs");
-    Shader ShaderFace("face.vs", "face.fs");
+    Shader sc_Shader("solidColor.vs", "solidColor.fs");
+    Shader texture_Shader("texture.vs", "texture.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
-    // ------------------------------------------------------------------
 
     // -------------------------- OBJEK 1 (KEPALA DAN BADAN) ----------------------------------
 
@@ -118,36 +112,36 @@ int main()
         -0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BL
 
         // kiri
-        -0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+        -0.16f, 0.48f, 0.16f,    0.18f, 0.121f, 0.058f, // BL
         -0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BR
         -0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
         -0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
-        -0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // TL
-        -0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+        -0.16f,  0.8f, 0.16f,    0.18f, 0.121f, 0.058f, // TL
+        -0.16f, 0.48f, 0.16f,    0.18f, 0.121f, 0.058f, // BL
 
         // kanan
-         0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+         0.16f, 0.48f, 0.16f,    0.18f, 0.121f, 0.058f, // BL
          0.16f, 0.48f, -0.16f,   0.18f, 0.121f, 0.058f, // BR
          0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
          0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
-         0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // TL
-         0.16f, 0.48f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+         0.16f,  0.8f, 0.16f,    0.18f, 0.121f, 0.058f, // TL
+         0.16f, 0.48f, 0.16f,    0.18f, 0.121f, 0.058f, // BL
 
         // bawah
-        -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
-         0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BR
+        -0.16f, 0.48f, 0.16f,    0.662f, 0.490f, 0.392f, // BL
+         0.16f, 0.48f, 0.16f,    0.662f, 0.490f, 0.392f, // BR
          0.16f, 0.48f, -0.16f,   0.662f, 0.490f, 0.392f, // TR
          0.16f, 0.48f, -0.16f,   0.662f, 0.490f, 0.392f, // TR
         -0.16f, 0.48f, -0.16f,   0.662f, 0.490f, 0.392f, // TL
-        -0.16f, 0.48f, 0.16f,   0.662f, 0.490f, 0.392f, // BL
+        -0.16f, 0.48f, 0.16f,    0.662f, 0.490f, 0.392f, // BL
 
         // atas
-        -0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
-         0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // BR
+        -0.16f,  0.8f, 0.16f,    0.18f, 0.121f, 0.058f, // BL
+         0.16f,  0.8f, 0.16f,    0.18f, 0.121f, 0.058f, // BR
          0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
          0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TR
         -0.16f,  0.8f, -0.16f,   0.18f, 0.121f, 0.058f, // TL
-        -0.16f,  0.8f, 0.16f,   0.18f, 0.121f, 0.058f, // BL
+        -0.16f,  0.8f, 0.16f,    0.18f, 0.121f, 0.058f, // BL
 
         // BADAN
 
@@ -160,50 +154,50 @@ int main()
         -0.16f,  0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // BL
 
         // belakang
-        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
-         0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BR
+        -0.16f, 0.0f,  0.08f,     0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.0f,  0.08f,     0.054f, 0.682f, 0.682f, // BR
          0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TR
          0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TR
         -0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TL
-        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
+        -0.16f, 0.0f,  0.08f,     0.054f, 0.682f, 0.682f, // BL
 
         // kiri
-        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
-        -0.16f, 0.0f, -0.08f,   0.054f, 0.682f, 0.682f, // BR
+        -0.16f, 0.0f,  0.08f,     0.054f, 0.682f, 0.682f, // BL
+        -0.16f, 0.0f, -0.08f,     0.054f, 0.682f, 0.682f, // BR
         -0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
         -0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
         -0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TL
-        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
+        -0.16f, 0.0f,  0.08f,     0.054f, 0.682f, 0.682f, // BL
 
         // kanan
-         0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
-         0.16f, 0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // BR
-         0.16f, 0.48f, -0.08f,   0.054f, 0.682f, 0.682f, // TR
-         0.16f, 0.48f, -0.08f,   0.054f, 0.682f, 0.682f, // TR
+         0.16f, 0.0f, 0.08f,      0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.0f,  -0.08f,    0.054f, 0.682f, 0.682f, // BR
+         0.16f, 0.48f, -0.08f,    0.054f, 0.682f, 0.682f, // TR
+         0.16f, 0.48f, -0.08f,    0.054f, 0.682f, 0.682f, // TR
          0.16f,  0.48f,  0.08f,   0.054f, 0.682f, 0.682f, // TL
-         0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.0f, 0.08f,      0.054f, 0.682f, 0.682f, // BL
 
         // bawah
-        -0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
-         0.16f, 0.0f, 0.08f,   0.054f, 0.682f, 0.682f, // BR
-         0.16f, 0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
-         0.16f, 0.0f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
-        -0.16f, 0.0f, -0.08f,   0.054f, 0.682f, 0.682f, // TL
-        -0.16f, 0.0f,  0.08f,   0.054f, 0.682f, 0.682f, // BL
+        -0.16f, 0.0f, 0.08f,      0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.0f, 0.08f,      0.054f, 0.682f, 0.682f, // BR
+         0.16f, 0.0f,  -0.08f,    0.054f, 0.682f, 0.682f, // TR
+         0.16f, 0.0f,  -0.08f,    0.054f, 0.682f, 0.682f, // TR
+        -0.16f, 0.0f, -0.08f,     0.054f, 0.682f, 0.682f, // TL
+        -0.16f, 0.0f,  0.08f,     0.054f, 0.682f, 0.682f, // BL
 
         // atas
-        -0.16f, 0.48f, 0.08f,   0.054f, 0.682f, 0.682f, // BL
-         0.16f, 0.48f, 0.08f,   0.054f, 0.682f, 0.682f, // BR
+        -0.16f, 0.48f, 0.08f,     0.054f, 0.682f, 0.682f, // BL
+         0.16f, 0.48f, 0.08f,     0.054f, 0.682f, 0.682f, // BR
          0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
          0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TR
         -0.16f, 0.48f,  -0.08f,   0.054f, 0.682f, 0.682f, // TL
-        -0.16f, 0.48f, 0.08f,   0.054f, 0.682f, 0.682f // BL
+        -0.16f, 0.48f, 0.08f,     0.054f, 0.682f, 0.682f // BL
     };
 
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -235,7 +229,7 @@ int main()
     glGenVertexArrays(1, &VAO_face);
     glGenBuffers(1, &VBO_face);
     glGenBuffers(1, &EBO_face);
-
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     glBindVertexArray(VAO_face);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO_face);
@@ -252,12 +246,9 @@ int main()
     glEnableVertexAttribArray(1);
 
     // load and create a texture 
-    // -------------------------
-    unsigned int ourTexture;
-    // texture 1
-    // ---------
-    glGenTextures(1, &ourTexture);
-    glBindTexture(GL_TEXTURE_2D, ourTexture);
+    unsigned int texture_muka;
+    glGenTextures(1, &texture_muka);
+    glBindTexture(GL_TEXTURE_2D, texture_muka);
     // set the texture wrapping parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -335,7 +326,7 @@ int main()
     unsigned int VBO2, VAO2;
     glGenVertexArrays(1, &VAO2);
     glGenBuffers(1, &VBO2);
-
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     glBindVertexArray(VAO2);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO2);
@@ -348,7 +339,6 @@ int main()
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
-
     // -------------------------- OBJEK 3 (KAKI) ----------------------------------
 
     float vertices3[] = {
@@ -356,55 +346,55 @@ int main()
         // KAKI
 
         // depan
-        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
-        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
-        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
-        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
-        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TL
-        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        -0.16f, -0.48f, -0.08f,     0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, -0.08f,       0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, -0.08f,         0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, -0.08f,         0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, -0.08f,       0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, -0.08f,     0.286f, 0.274f, 0.592f, // BL
 
         // belakang
-        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
-        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BR
-        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
-        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+        -0.16f, -0.48f, 0.08f,      0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, 0.08f,        0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, 0.08f,          0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f,          0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, 0.08f,        0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, 0.08f,      0.286f, 0.274f, 0.592f, // BL
 
         // kiri
-        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
-        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BR
-        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TL
-        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        -0.16f, -0.48f, -0.08f,     0.286f, 0.274f, 0.592f, // BL
+        -0.16f, -0.48f, 0.08f,      0.286f, 0.274f, 0.592f, // BR
+        -0.16f, 0.0f, 0.08f,        0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, 0.08f,        0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, -0.08f,       0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, -0.08f,     0.286f, 0.274f, 0.592f, // BL
         // kanan
-        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
-        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
-        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
-        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // TR
-        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
-        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, 0.08f,        0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, -0.08f,       0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, -0.08f,         0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, -0.08f,         0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f,          0.286f, 0.274f, 0.592f, // TL
+        0.0f, -0.48f, 0.08f,        0.286f, 0.274f, 0.592f, // BL
         // bawah
-        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
-        0.0f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
-        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        0.0f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        -0.16f, -0.48f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
-        -0.16f, -0.48f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
+        -0.16f, -0.48f, -0.08f,     0.286f, 0.274f, 0.592f, // BL
+        0.0f, -0.48f, -0.08f,       0.286f, 0.274f, 0.592f, // BR
+        0.0f, -0.48f, 0.08f,        0.286f, 0.274f, 0.592f, // TR
+        0.0f, -0.48f, 0.08f,        0.286f, 0.274f, 0.592f, // TR
+        -0.16f, -0.48f, 0.08f,      0.286f, 0.274f, 0.592f, // TL
+        -0.16f, -0.48f, -0.08f,     0.286f, 0.274f, 0.592f, // BL
         // atas
-        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // BL
-        0.0f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f, // BR
-        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        0.0f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TR
-        -0.16f, 0.0f, 0.08f, 0.286f, 0.274f, 0.592f, // TL
-        -0.16f, 0.0f, -0.08f, 0.286f, 0.274f, 0.592f // BL
+        -0.16f, 0.0f, -0.08f,       0.286f, 0.274f, 0.592f, // BL
+        0.0f, 0.0f, -0.08f,         0.286f, 0.274f, 0.592f, // BR
+        0.0f, 0.0f, 0.08f,          0.286f, 0.274f, 0.592f, // TR
+        0.0f, 0.0f, 0.08f,          0.286f, 0.274f, 0.592f, // TR
+        -0.16f, 0.0f, 0.08f,        0.286f, 0.274f, 0.592f, // TL
+        -0.16f, 0.0f, -0.08f,       0.286f, 0.274f, 0.592f // BL
     };
 
     unsigned int VBO3, VAO3;
     glGenVertexArrays(1, &VAO3);
     glGenBuffers(1, &VBO3);
-
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     glBindVertexArray(VAO3);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO3);
@@ -421,10 +411,10 @@ int main()
     // -------------------------- OBJEK 4 (LANTAI) ----------------------------------
 
     float vertices_floor[] = {
-         1.5f, -0.48f, -1.5f,   0.419f, 0.419f, 0.419f,  // top right
-         1.5f, -0.48f, 1.5f,    0.419f, 0.419f, 0.419f, // bottom right
-        -1.5f, -0.48f, 1.5f,    0.419f, 0.419f, 0.419f, // bottom left
-        -1.5f, -0.48f, -1.5f,   0.419f, 0.419f, 0.419f  // top left 
+         1.5f, -0.48f, -1.5f,   1.0f, 0.0f, // top right
+         1.5f, -0.48f, 1.5f,    1.0f, 1.0f, // bottom right
+        -1.5f, -0.48f, 1.5f,    0.0f, 1.0f, // bottom left
+        -1.5f, -0.48f, -1.5f,   0.0f, 0.0f  // top left
     };
     unsigned int indices_floor[] = {  // note that we start from 0!
         0, 1, 3,  // first Triangle
@@ -444,136 +434,234 @@ int main()
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices_floor), indices_floor, GL_STATIC_DRAW);
     
     // position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    // color coord attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
+    // load and create a texture 
+    unsigned int texture_lantai;
+    glGenTextures(1, &texture_lantai);
+    glBindTexture(GL_TEXTURE_2D, texture_lantai);
+    // set the texture wrapping parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // set texture filtering parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // load image, create texture and generate mipmaps
+    stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
+    data = stbi_load(("Textures/grass.jpeg"), &width, &height, &nrChannels, 0);
+    if (data)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+    stbi_image_free(data);
+
+    // -------------------------- OBJEK 5 piramid ----------------------------------
+    float vertices_piramid[] = {
+
+        0.0f, 0.2f, 0.0f,       0.992f, 0.8f, 0.886f,
+        0.1f, 0.0f, -0.1f,      0.815f, 0.627f, 0.945f,
+        0.1f, 0.0f, 0.1f,       0.552f, 0.419f, 0.819f,
+
+        0.0f,  0.2f,  0.0f,     0.992f, 0.8f, 0.886f,
+        0.1f,  0.0f,  -0.1f,    0.815f, 0.627f, 0.945f,
+        -0.1f, 0.0f,  -0.1f,    0.552f, 0.419f, 0.819f,
+
+        0.0f,   0.2f, 0.0f,     0.992f, 0.8f, 0.886f,
+        -0.1f,  0.0f, -0.1f,    0.815f, 0.627f, 0.945f,
+        -0.1f,  0.0f, 0.1f,     0.941f, 0.850, 0.952f,
+
+        0.0f,   0.2f, 0.0f,     0.992f, 0.8f, 0.886f,
+        0.1f,   0.0f, 0.1f,     0.815f, 0.627f, 0.945f,
+        -0.1f,  0.0f, 0.1f,     0.941f, 0.850f, 0.952f,
+
+        -0.1f,  0.0f, -0.1f,    0.992f, 0.8f, 0.886f,
+        0.1f,   0.0f, -0.1f,    0.815f, 0.627f, 0.945f,
+        0.1f,   0.0f, 0.1f,     0.941f, 0.850f, 0.952f,
+        0.1f,   0.0f, 0.1f,     0.941f, 0.850f, 0.952f,
+        -0.1f,  0.0f, 0.1f,     0.552f, 0.419f, 0.819f,
+        -0.1f,  0.0f, -0.1f,    0.992f, 0.8f, 0.886f
+
+    };
+
+    unsigned int VBO_piramid, VAO_piramid;
+    glGenVertexArrays(1, &VAO_piramid);
+    glGenBuffers(1, &VBO_piramid);
+    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
+    glBindVertexArray(VAO_piramid);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO_piramid);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices_piramid), vertices_piramid, GL_STATIC_DRAW);
+
+    // position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
 
     // color coord attribute
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
+    // world space positions of our pyramids
+    glm::vec3 pyramidPositions[] = {
+
+        glm::vec3(1.0f,  1.0f, -1.5f),
+        glm::vec3(-1.7f,  0.5f, -0.5f),
+        glm::vec3(0.3f,  1.2f, 1.6f),
+        glm::vec3(-0.9f,  0.5f, 1.3f),
+        glm::vec3(1.5f,  0.9f, 1.0f),
+        glm::vec3(-1.5f,  0.1f, -1.2f),
+        glm::vec3(0.3f,  0.3f, -1.6f),
+        glm::vec3(1.8f,  0.3f, -0.1f),
+        glm::vec3(-0.2f,  2.0f, -0.5f)
+    };
+
     // render loop
-    // -----------
     while (!glfwWindowShouldClose(window))
     {
         // per-frame time logic
-        // --------------------
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
         // input
-        // -----
         processInput(window);
 
         // render
-        // ------
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        // --------------------------------------------- OBJECT TANPA TEXTURE --------------------------------------------------------
+        
         // activate shader
-        ourShader.use();
+        sc_Shader.use();
 
         // pass projection matrix to shader (note that in this case it could change every frame)
         glm::mat4 projection = glm::perspective(glm::radians(fov), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-        ourShader.setMat4("projection", projection);
+        sc_Shader.setMat4("projection", projection);
 
         // camera/view transformation
         glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-        ourShader.setMat4("view", view);
+        sc_Shader.setMat4("view", view);
 
 
-        // merender object kepala dan badan
+        // ---------------------- merender object kepala dan badan
         glBindVertexArray(VAO);
         // calculate the model matrix for each object and pass it to shader before drawing
         glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
         model = glm::translate(model, glm::vec3(posX, posY, posZ));
         float angle = 0.0f;
         model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0f, 1.0f, 0.0f));
-        ourShader.setMat4("model", model);
+        sc_Shader.setMat4("model", model);
         glDrawArrays(GL_TRIANGLES, 0, 66);
 
-        // merender object tangan kanan
+        // ---------------------- merender object tangan kanan
         glBindVertexArray(VAO2);
-        // calculate the model matrix for each object and pass it to shader before drawing
-        glm::mat4 model_rh = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        
+        glm::mat4 model_rh = glm::mat4(1.0f);
         model_rh = glm::translate(model_rh, glm::vec3(posX_rh, posY_hand, posZ));
         float angle_rh = depan;
         model_rh = glm::rotate(model_rh, glm::radians(angle_rh), glm::vec3(1.0f, 0.0f, 0.0f));
-        ourShader.setMat4("model", model_rh);
+        sc_Shader.setMat4("model", model_rh);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
-        // merender object tangan kiri
+        // ---------------------- merender object tangan kiri
         glBindVertexArray(VAO2);
-        // calculate the model matrix for each object and pass it to shader before drawing
-        glm::mat4 model_lh = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        
+        glm::mat4 model_lh = glm::mat4(1.0f);
         model_lh = glm::translate(model_lh, glm::vec3(posX_lh, posY_hand, posZ));
         float angle_lh = belakang;
         model_lh = glm::rotate(model_lh, glm::radians(angle_lh), glm::vec3(1.0f, 0.0f, 0.0f));
-        ourShader.setMat4("model", model_lh);
+        sc_Shader.setMat4("model", model_lh);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
-        // merender object kaki kanan
+        // ---------------------- merender object kaki kanan
         glBindVertexArray(VAO3);
-        // calculate the model matrix for each object and pass it to shader before drawing
-        glm::mat4 model_rf = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        
+        glm::mat4 model_rf = glm::mat4(1.0f);
         model_rf = glm::translate(model_rf, glm::vec3(posX, posY, posZ));
         float angle_rf = belakang;
         model_rf = glm::rotate(model_rf, glm::radians(angle_rf), glm::vec3(1.0f, 0.0f, 0.0f));
-        ourShader.setMat4("model", model_rf);
+        sc_Shader.setMat4("model", model_rf);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
-        // merender object kaki kiri
+        // ---------------------- merender object kaki kiri
         glBindVertexArray(VAO3);
-        // calculate the model matrix for each object and pass it to shader before drawing
-        glm::mat4 model_lf = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        
+        glm::mat4 model_lf = glm::mat4(1.0f); 
         model_lf = glm::translate(model_lf, glm::vec3(posX_lf, posY, posZ));
         float angle_lf = depan;
         model_lf = glm::rotate(model_lf, glm::radians(angle_lf), glm::vec3(1.0f, 0.0f, 0.0f));
-        ourShader.setMat4("model", model_lf);
+        sc_Shader.setMat4("model", model_lf);
         glDrawArrays(GL_TRIANGLES, 0, 36);
-        // 
-        // 
-        // merender object lantai
-        glBindVertexArray(VAO_floor);
-        // calculate the model matrix for each object and pass it to shader before drawing
-        glm::mat4 model_floor = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-        model_floor = glm::translate(model_floor, glm::vec3(0.0f, 0.0f, 0.0f));
-        float angle_floor = 0.0f;
-        model_floor = glm::rotate(model_floor, glm::radians(angle_floor), glm::vec3(1.0f, 1.0f, 1.0f));
-        ourShader.setMat4("model", model_floor);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-        // bind textures on corresponding texture units
 
-        glBindTexture(GL_TEXTURE_2D, ourTexture);
+        // ---------------------- merender object piramid
+        glBindVertexArray(VAO_piramid);
+
+        for (unsigned int i = 0; i < sizeof(pyramidPositions)/sizeof(pyramidPositions[0]); i++)
+        {
+            
+            glm::mat4 model_piramid = glm::mat4(1.0f);
+            model_piramid = glm::translate(model_piramid, pyramidPositions[i]);
+            float angle = 20.0f * i;
+            model_piramid = glm::rotate(model_piramid, glm::radians(angle) + (float)glfwGetTime(), glm::vec3(2.4f, -0.4f, -3.5f));
+            sc_Shader.setMat4("model", model_piramid);
+
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
+
+        // --------------------------------------------- OBJECT DENGAN TEXTURE --------------------------------------------------------
+        
         // activate shader
-        ShaderFace.use();
+        texture_Shader.use();
 
         // pass projection matrix to shader (note that in this case it could change every frame)
-        glm::mat4 projection_face = glm::perspective(glm::radians(fov), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-        ShaderFace.setMat4("projection", projection_face);
+        texture_Shader.setMat4("projection", projection);
 
         // camera/view transformation
-        glm::mat4 view_face = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-        ShaderFace.setMat4("view", view_face);
+        texture_Shader.setMat4("view", view);
 
-        // merender object face (muka)
+        // ---------------------- merender object face (muka)
+        glBindTexture(GL_TEXTURE_2D, texture_muka);
+
         glBindVertexArray(VAO_face);
-        // calculate the model matrix for each object and pass it to shader before drawing
-        glm::mat4 model_face = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+        
+        glm::mat4 model_face = glm::mat4(1.0f);
         model_face = glm::translate(model_face, glm::vec3(posX, posY, posZ));
         float angle_face = 0.0f;
         model_face = glm::rotate(model_face, glm::radians(angle_face), glm::vec3(1.0f, 1.0f, 1.0f));
-        ShaderFace.setMat4("model", model_face);
+        texture_Shader.setMat4("model", model_face);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
+
+        // ---------------------- merender object lantai
+        glBindTexture(GL_TEXTURE_2D, texture_lantai);
+
+        glBindVertexArray(VAO_floor);
+        
+        glm::mat4 model_floor = glm::mat4(1.0f);
+        model_floor = glm::translate(model_floor, glm::vec3(0.0f, 0.0f, 0.0f));
+        float angle_floor = 0.0f;
+        model_floor = glm::rotate(model_floor, glm::radians(angle_floor), glm::vec3(1.0f, 1.0f, 1.0f));
+        texture_Shader.setMat4("model", model_floor);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-        // -------------------------------------------------------------------------------
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
     // optional: de-allocate all resources once they've outlived their purpose:
-    // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     glDeleteVertexArrays(1, &VAO_face);
@@ -586,15 +674,17 @@ int main()
     glDeleteBuffers(1, &VBO_floor);
     glDeleteVertexArrays(1, &VAO_floor);
     glDeleteBuffers(1, &VBO_floor);
+    glDeleteVertexArrays(1, &VAO_piramid);
+    glDeleteBuffers(1, &VBO_piramid);
+    glDeleteVertexArrays(1, &VAO_piramid);
+    glDeleteBuffers(1, &VBO_piramid);
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
-    // ------------------------------------------------------------------
     glfwTerminate();
     return 0;
 }
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-// ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow* window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -660,7 +750,6 @@ void processInput(GLFWwindow* window)
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
-// ---------------------------------------------------------------------------------------------
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     // make sure the viewport matches the new window dimensions; note that width and 
@@ -669,7 +758,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 }
 
 // glfw: whenever the mouse moves, this callback is called
-// -------------------------------------------------------
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
     if (firstMouse)
@@ -705,7 +793,6 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 }
 
 // glfw: whenever the mouse scroll wheel scrolls, this callback is called
-// ----------------------------------------------------------------------
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
     fov -= (float)yoffset;

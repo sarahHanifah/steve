@@ -146,10 +146,10 @@
     <ClCompile Include="steve.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="face.fs" />
-    <None Include="face.vs" />
-    <None Include="steve.fs" />
-    <None Include="steve.vs" />
+    <None Include="texture.fs" />
+    <None Include="texture.vs" />
+    <None Include="solidColor.fs" />
+    <None Include="solidColor.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

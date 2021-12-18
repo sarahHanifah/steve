@@ -23,16 +23,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="steve.fs">
+    <None Include="solidColor.fs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="steve.vs">
+    <None Include="solidColor.vs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="face.fs">
+    <None Include="texture.fs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="face.vs">
+    <None Include="texture.vs">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
